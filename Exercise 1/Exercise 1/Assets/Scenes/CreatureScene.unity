@@ -1193,7 +1193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   creatureName: Frank
-  health: 54
+  health: 7
+  creaturePrefab: {fileID: 3510236535962085908, guid: c0c99fb98a1f7c5458d3095d1c092a5e, type: 3}
 --- !u!1 &1881837228
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,7 +1315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6571465843267244296, guid: c0c99fb98a1f7c5458d3095d1c092a5e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.8570075
+      value: -7.317682
       objectReference: {fileID: 0}
     - target: {fileID: 6571465843267244296, guid: c0c99fb98a1f7c5458d3095d1c092a5e, type: 3}
       propertyPath: m_LocalRotation.w
