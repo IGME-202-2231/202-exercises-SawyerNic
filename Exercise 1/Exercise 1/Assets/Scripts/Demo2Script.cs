@@ -11,6 +11,11 @@ public class Demo2Script : MonoBehaviour
 
     [SerializeField]
     private GameObject creaturePrefab;
+    [SerializeField]
+    private Transform myTransform;
+
+    
+    
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +23,9 @@ public class Demo2Script : MonoBehaviour
         Debug.Log("Creature's name is " + creatureName);
         Debug.Log("Creature's health is " + health);
         Instantiate(creaturePrefab);
+        Instantiate(creaturePrefab);
+        Instantiate(creaturePrefab);
+        
     }
 
     // Update is called once per frame
