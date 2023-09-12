@@ -1,21 +1,32 @@
 using UnityEngine;
 
+<<<<<<< Updated upstream
 /// <summary>
 /// A Script that handles input from the user to move/rotate the GameObject it's attached to
+=======
+/// <summary>
+/// A Script that handles input from the user to move/rotate the GameObject it's attached to
+>>>>>>> Stashed changes
 /// </summary>
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
     float moveSpeed = 5f;
 
+<<<<<<< Updated upstream
     /// <summary>
     /// How much to move this GameObject forawrd/backwards along it's local Forward vector in a single frame
+=======
+    /// <summary>
+    /// How much to move this GameObject forawrd/backwards along it's local Forward vector in a single frame
+>>>>>>> Stashed changes
     /// </summary>
     float movement = 0;
 
     [SerializeField]
     float turnSpeed = 1f;
 
+<<<<<<< Updated upstream
     /// <summary>
     /// How much to turn this GameObject left/right along it's local Y axis in a single frame
     /// </summary>
@@ -23,6 +34,15 @@ public class CameraController : MonoBehaviour
 
     /// <summary>
     /// Constaints to read the values from axis defined in the Input Manager
+=======
+    /// <summary>
+    /// How much to turn this GameObject left/right along it's local Y axis in a single frame
+    /// </summary>
+    float turnAmount = 0;
+
+    /// <summary>
+    /// Constaints to read the values from axis defined in the Input Manager
+>>>>>>> Stashed changes
     /// </summary>
     const string k_HORIZONTAL = "Horizontal";
     const string k_VERTICAL = "Vertical";
