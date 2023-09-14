@@ -9,15 +9,27 @@ public class RotateHand : MonoBehaviour
     float turnAmount = 0;
     [SerializeField]
     bool useDeltaTime;
+    [SerializeField]
+    GameObject arrow;
     void Start()
     {
+        // For the numbers: 
+        // 1.) instantiate each object
+        //GameObject newNumber = Instantiate(/*prefab*/);
+
+        // 2.) Trig to figure out x and y
+        //newNumber.transform.position;
+        //newNumber.GetComponent<TextMesh>().
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        float sec = 100 * Time.deltaTime;
-        transform.rotation = Quaternion.Euler(0, 0, 45+sec);
+
+        float translation = Time.deltaTime*6;
+        turnAmount += translation;
+        transform.rotation = Quaternion.Euler(0, 0, turnAmount);
+
     }
 }
