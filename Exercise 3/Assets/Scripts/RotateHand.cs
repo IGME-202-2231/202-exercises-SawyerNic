@@ -7,6 +7,7 @@ public class RotateHand : MonoBehaviour
 {
     // Start is called before the first frame update
     float turnAmount = 0;
+    [SerializeField]
     bool useDeltaTime;
     void Start()
     {
