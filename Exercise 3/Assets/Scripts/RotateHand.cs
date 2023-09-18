@@ -16,19 +16,28 @@ public class RotateHand : MonoBehaviour
         // For the numbers: 
         // 1.) instantiate each object
         //GameObject newNumber = Instantiate(/*prefab*/);
-
+        
         // 2.) Trig to figure out x and y
         //newNumber.transform.position;
         //newNumber.GetComponent<TextMesh>().
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        float translation;
 
-        float translation = Time.deltaTime*6;
+        if (useDeltaTime)
+        {
+            translation = Time.deltaTime * 6;
+        }
+        else
+        {
+            translation = (float).006;
+        }
         turnAmount += translation;
+
         transform.rotation = Quaternion.Euler(0, 0, turnAmount);
 
     }
