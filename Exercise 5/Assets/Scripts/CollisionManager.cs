@@ -16,19 +16,21 @@ public class CollisionManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Set all spriteinfo.iscolliding to false
+
+        //loop through collidables
+        //check each sprite for collisions against each other sprite
+            //if they are, set iscolliding to true
+
         
     }
 
     bool AABBCheck(SpriteInfo spriteA, SpriteInfo spriteB)
     {
-        if (spriteB.RectMin.x < spriteA.RectMax.x && 
-            spriteB.RectMax.x > spriteA.RectMin.x && 
-            spriteB.RectMax.y < spriteA.RectMin.y && 
-            spriteB.RectMax.y > spriteA.RectMin.y)
-        {
-            return true;
-        }
-        return false;
+        return spriteB.RectMin.x < spriteA.RectMax.x &&
+            spriteB.RectMax.x > spriteA.RectMin.x &&
+            spriteB.RectMax.y < spriteA.RectMin.y &&
+            spriteB.RectMax.y > spriteA.RectMin.y;
 
     }
 }
