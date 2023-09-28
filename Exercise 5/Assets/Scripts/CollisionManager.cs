@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,13 +11,29 @@ public class CollisionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // collidables = new List<SpriteInfo>(GetComponents<SpriteInfo>());
+        collidables = new List<SpriteInfo>(GetComponents<SpriteInfo>());
     }
 
     // Update is called once per frame
     void Update()
     {
         // Set all spriteinfo.iscolliding to false
+
+        foreach (var coll in collidables)
+        {
+            coll.IsColliding = false;
+        }
+
+        for (int i = 0; i < collidables.Count; i++)
+        {
+            for (int j = 0; j < collidables.Count; j++)
+            {
+                collidables[i].IsColliding = AABBCheck(collidables[i], collidables[j + i + 1]);
+                
+            }
+            
+        }
+
 
         //loop through collidables
         //check each sprite for collisions against each other sprite

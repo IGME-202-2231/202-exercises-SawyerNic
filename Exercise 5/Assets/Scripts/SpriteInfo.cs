@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpriteInfo : MonoBehaviour
@@ -10,16 +8,22 @@ public class SpriteInfo : MonoBehaviour
     [SerializeField]
     float radius = 1.0f;
 
+    [SerializeField]
+    Vector2 rectSize = Vector2.one;
+
+    [SerializeField]
+    bool useRendererBounds = true;
+
     bool isColliding = false;
 
     public Vector2 RectMin
     {
-        get { return transform.position - m_Sprite.bounds.extents; }
+        get { return (Vector2)transform.position - (rectSize / 2); }
     }
 
     public Vector2 RectMax
     {
-        get { return transform.position + m_Sprite.bounds.extents; }
+        get { return (Vector2)transform.position + (rectSize / 2); }
     }
 
     public bool IsColliding { set { isColliding = value; } }
@@ -41,5 +45,15 @@ public class SpriteInfo : MonoBehaviour
         {
             m_Sprite.color = Color.white;
         }
+        
+        if (useRendererBounds)
+        {
+            //rectSize = m_Sprite.bounds.extends * 2;
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position, rectSize);
     }
 }
