@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SpriteInfo : MonoBehaviour
@@ -5,8 +6,8 @@ public class SpriteInfo : MonoBehaviour
     [SerializeField]
     private SpriteRenderer m_Sprite;
 
-    [SerializeField]
-    float radius = 1.0f;
+    //[SerializeField]
+    //float radius = 1.0f;
 
     [SerializeField]
     Vector2 rectSize = Vector2.one;
@@ -14,7 +15,7 @@ public class SpriteInfo : MonoBehaviour
     [SerializeField]
     bool useRendererBounds = true;
 
-    bool isColliding = false;
+    public bool isColliding = false;
 
     public Vector2 RectMin
     {
@@ -31,7 +32,7 @@ public class SpriteInfo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -54,6 +55,6 @@ public class SpriteInfo : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(transform.position, rectSize);
+        //Gizmos.DrawLine(transform.position, rectSize);
     }
 }

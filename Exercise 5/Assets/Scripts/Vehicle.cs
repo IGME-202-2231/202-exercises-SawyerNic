@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,6 +42,7 @@ public class Vehicle : MonoBehaviour
             vehiclePosition.x = -vehiclePosition.x;
         }
         transform.position = vehiclePosition;
+
 
     }
 

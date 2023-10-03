@@ -6,12 +6,14 @@ using UnityEngine;
 public class CollisionManager : MonoBehaviour
 {
     [SerializeField]
-    List<SpriteInfo> collidables = new List<SpriteInfo>();
+    List<SpriteInfo> collidables;
 
     // Start is called before the first frame update
     void Start()
     {
-        collidables = new List<SpriteInfo>(GetComponents<SpriteInfo>());
+        collidables = new List<SpriteInfo>(GameObject.FindObjectsOfType<SpriteInfo>());
+        
+
     }
 
     // Update is called once per frame
@@ -24,29 +26,31 @@ public class CollisionManager : MonoBehaviour
             coll.IsColliding = false;
         }
 
-        for (int i = 0; i < collidables.Count; i++)
+        for (int i = 0; i < collidables.Count-1; i++)
         {
-            for (int j = 0; j < collidables.Count; j++)
+            for (int j = i; j < collidables.Count - 1; j++)
             {
-                collidables[i].IsColliding = AABBCheck(collidables[i], collidables[j + i + 1]);
-                
+                collidables[i].IsColliding = AABBCheck(collidables[i], collidables[j + 1]);
+
             }
-            
+
         }
 
+        Debug.Log(collidables[1].isColliding + " " + (collidables[3].RectMax.x - collidables[3].RectMin.x) + " " + collidables[3].isColliding);
+        
 
         //loop through collidables
         //check each sprite for collisions against each other sprite
-            //if they are, set iscolliding to true
+        //if they are, set iscolliding to true
 
-        
+
     }
 
     bool AABBCheck(SpriteInfo spriteA, SpriteInfo spriteB)
     {
         return spriteB.RectMin.x < spriteA.RectMax.x &&
             spriteB.RectMax.x > spriteA.RectMin.x &&
-            spriteB.RectMax.y < spriteA.RectMin.y &&
+            spriteB.RectMin.y < spriteA.RectMax.y &&
             spriteB.RectMax.y > spriteA.RectMin.y;
 
     }
