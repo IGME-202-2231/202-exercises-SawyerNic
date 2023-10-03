@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 406535931}
   rectSize: {x: 1, y: 1}
-  useRendererBounds: 0
+  useRendererBounds: 1
   isColliding: 0
 --- !u!212 &406535931
 SpriteRenderer:
@@ -223,7 +223,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &406535933
 MonoBehaviour:
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 1613483498}
   rectSize: {x: 1, y: 1}
-  useRendererBounds: 0
+  useRendererBounds: 1
   isColliding: 0
 --- !u!212 &1613483498
 SpriteRenderer:
@@ -430,7 +430,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1613483500
 MonoBehaviour:
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 1831974132}
   rectSize: {x: 1, y: 1}
-  useRendererBounds: 0
+  useRendererBounds: 1
   isColliding: 0
 --- !u!114 &1831974130
 MonoBehaviour:
@@ -563,7 +563,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1861300212
 GameObject:
@@ -613,7 +613,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1873859353
 GameObject:
@@ -648,7 +648,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 1873859355}
   rectSize: {x: 1, y: 1}
-  useRendererBounds: 0
+  useRendererBounds: 1
   isColliding: 0
 --- !u!212 &1873859355
 SpriteRenderer:
@@ -715,7 +715,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1873859357
 MonoBehaviour:
@@ -744,7 +744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1841318938854429106, guid: 41da5bee817191e459b0b9deeaa19944, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1841318938854429106, guid: 41da5bee817191e459b0b9deeaa19944, type: 3}
       propertyPath: m_LocalPosition.x
