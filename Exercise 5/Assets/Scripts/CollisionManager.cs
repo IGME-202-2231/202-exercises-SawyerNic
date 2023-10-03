@@ -8,39 +8,32 @@ public class CollisionManager : MonoBehaviour
     [SerializeField]
     List<SpriteInfo> collidables;
 
-    
-
     // Start is called before the first frame update
     void Start()
     {
         collidables = new List<SpriteInfo>(GameObject.FindObjectsOfType<SpriteInfo>());
-        
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Set all spriteinfo.iscolliding to false
-
-
-
-
-        for (int i = 0; i < collidables.Count; i++)
+        for(int i = 0; i < collidables.Count; i++)
         {
+            collidables[i].isColliding = false;
+        }
+        
+        for (int i = 0; i < collidables.Count-1; i++)
+        {
+
             for (int j = i + 1; j < collidables.Count; j++)
             {
-                // Compare myList[i] with myList[j]
-                // Perform your desired comparison operation here
-                // For example:
-                collidables[i].isColliding = AABBCheck(collidables[i], collidables[j]);
-                
-                    
-                
+                if(AABBCheck(collidables[i], collidables[j]))
+                {
+                    collidables[i].isColliding = true;
+                    collidables[j].isColliding = true;
+                }
             }
         }
-
-
     }
 
     bool AABBCheck(SpriteInfo spriteA, SpriteInfo spriteB)
