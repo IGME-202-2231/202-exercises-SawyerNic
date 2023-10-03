@@ -46,6 +46,7 @@ public class SpriteInfo : MonoBehaviour
         {
             m_Sprite.color = Color.white;
         }
+
         
         if (useRendererBounds)
         {

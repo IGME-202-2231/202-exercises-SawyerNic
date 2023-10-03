@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 406535931}
   rectSize: {x: 1, y: 1}
-  useRendererBounds: 1
+  useRendererBounds: 0
   isColliding: 0
 --- !u!212 &406535931
 SpriteRenderer:
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 1613483498}
   rectSize: {x: 1, y: 1}
-  useRendererBounds: 1
+  useRendererBounds: 0
   isColliding: 0
 --- !u!212 &1613483498
 SpriteRenderer:
@@ -445,6 +445,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
+--- !u!1 &1778859038 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 335216933111699595, guid: 41da5bee817191e459b0b9deeaa19944, type: 3}
+  m_PrefabInstance: {fileID: 2049910223}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1831974127
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,10 +460,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1831974133}
   - component: {fileID: 1831974132}
-  - component: {fileID: 1831974131}
   - component: {fileID: 1831974130}
   - component: {fileID: 1831974129}
-  - component: {fileID: 1831974128}
   m_Layer: 0
   m_Name: car_blue_2
   m_TagString: Untagged
@@ -466,19 +469,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1831974128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831974127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5c19fdcf2b98ee43ba3599865f9bafb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collidables: []
 --- !u!114 &1831974129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -493,7 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 1831974132}
   rectSize: {x: 1, y: 1}
-  useRendererBounds: 1
+  useRendererBounds: 0
   isColliding: 0
 --- !u!114 &1831974130
 MonoBehaviour:
@@ -508,19 +498,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
---- !u!114 &1831974131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1831974127}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4c059a1a308e254484fdd1207e16402, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_VehicleController: {fileID: 0}
 --- !u!212 &1831974132
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -619,9 +596,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collidables:
   - {fileID: 1613483497}
-  - {fileID: 2049910224}
+  - {fileID: 2049910230}
   - {fileID: 406535930}
   - {fileID: 1873859354}
+  - {fileID: 1831974129}
 --- !u!4 &1861300214
 Transform:
   m_ObjectHideFlags: 0
@@ -816,19 +794,33 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 27445f007adfae349a5c70f7c28e3b2b, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7221770780980373760, guid: 41da5bee817191e459b0b9deeaa19944, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 335216933111699595, guid: 41da5bee817191e459b0b9deeaa19944, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2049910230}
   m_SourcePrefab: {fileID: 100100000, guid: 41da5bee817191e459b0b9deeaa19944, type: 3}
---- !u!114 &2049910224 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7221770780980373760, guid: 41da5bee817191e459b0b9deeaa19944, type: 3}
+--- !u!212 &2049910225 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8457265782142952974, guid: 41da5bee817191e459b0b9deeaa19944, type: 3}
   m_PrefabInstance: {fileID: 2049910223}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &2049910230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778859038}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00d0aac40168527409f3199b067024d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Sprite: {fileID: 2049910225}
+  rectSize: {x: 1, y: 1}
+  useRendererBounds: 1
+  isColliding: 0

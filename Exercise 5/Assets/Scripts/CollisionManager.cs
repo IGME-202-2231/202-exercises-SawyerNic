@@ -8,6 +8,8 @@ public class CollisionManager : MonoBehaviour
     [SerializeField]
     List<SpriteInfo> collidables;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,27 +23,22 @@ public class CollisionManager : MonoBehaviour
     {
         // Set all spriteinfo.iscolliding to false
 
-        foreach (var coll in collidables)
-        {
-            coll.IsColliding = false;
-        }
 
-        for (int i = 0; i < collidables.Count-1; i++)
+
+
+        for (int i = 0; i < collidables.Count; i++)
         {
-            for (int j = i; j < collidables.Count - 1; j++)
+            for (int j = i + 1; j < collidables.Count; j++)
             {
-                collidables[i].IsColliding = AABBCheck(collidables[i], collidables[j + 1]);
-
+                // Compare myList[i] with myList[j]
+                // Perform your desired comparison operation here
+                // For example:
+                collidables[i].isColliding = AABBCheck(collidables[i], collidables[j]);
+                
+                    
+                
             }
-
         }
-
-        Debug.Log(collidables[1].isColliding + " " + (collidables[3].RectMax.x - collidables[3].RectMin.x) + " " + collidables[3].isColliding);
-        
-
-        //loop through collidables
-        //check each sprite for collisions against each other sprite
-        //if they are, set iscolliding to true
 
 
     }
@@ -55,3 +52,4 @@ public class CollisionManager : MonoBehaviour
 
     }
 }
+
