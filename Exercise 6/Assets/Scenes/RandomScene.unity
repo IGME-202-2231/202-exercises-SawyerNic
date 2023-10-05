@@ -123,76 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!212 &213526020 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1487307443796658564, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
-  m_PrefabInstance: {fileID: 272541644}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &272541644
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 187848395055638579, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 187848395055638579, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 187848395055638579, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 187848395055638579, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 187848395055638579, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 187848395055638579, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 187848395055638579, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 187848395055638579, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 187848395055638579, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 187848395055638579, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 187848395055638579, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1104698002147884808, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
-      propertyPath: m_Name
-      value: Animal
-      objectReference: {fileID: 0}
-    - target: {fileID: 1487307443796658564, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
 --- !u!1 &444751234
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 734e75d4bab797945afc4cd77b3c0327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animalPrefab: {fileID: 213526020}
+  animalPrefab: {fileID: 1487307443796658564, guid: 68f860c1a04d33c4dac0c10183fbfdc1, type: 3}
   animalSprites:
   - {fileID: 21300000, guid: 930a0a0f33d0d344a88e5761bacac792, type: 3}
   - {fileID: 21300000, guid: beddd5e6b092926418369bd3f9cf035e, type: 3}
