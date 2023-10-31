@@ -12,7 +12,9 @@ public class PhysicsObject : MonoBehaviour
     Vector3 acceleration;
 
     [SerializeField]
-    float maxSpeed=1;
+    float maxSpeed = 1;
+    public float MaxSpeed { get { return maxSpeed; } }
+    public Vector3 Velocity { get { return velocity; } }
 
     [SerializeField]
     float Mass =1;
