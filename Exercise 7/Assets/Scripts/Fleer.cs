@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Seeker : Agent
+public class Fleer : Agent
 {
     [SerializeField]
     GameObject target;
@@ -11,8 +11,8 @@ public class Seeker : Agent
 
     protected override void CalcSteeringForces()
     {
-        seekForce = Seek(target);
-        myPhysicsObject.ApplyForce(Seek(target));
+        seekForce = Flee(target);
+        myPhysicsObject.ApplyForce(Flee(target));
     }
 
     private void OnDrawGizmosSelected()
@@ -20,8 +20,9 @@ public class Seeker : Agent
         Gizmos.color = Color.white;
 
         Gizmos.DrawLine(transform.position, transform.position + myPhysicsObject.Velocity);
-        
+
+        Gizmos.DrawLine(transform.position, target.transform.position);
+
+
     }
-
-
 }
