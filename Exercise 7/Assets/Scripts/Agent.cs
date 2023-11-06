@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class Agent : MonoBehaviour
 {
     [SerializeField]
-    protected PhysicsObject myPhysicsObject;
+    public PhysicsObject myPhysicsObject;
 
     [SerializeField]
     float maxForce = 10;
@@ -23,9 +23,11 @@ public abstract class Agent : MonoBehaviour
     void Update()
     {
         CalcSteeringForces();
+        
     }
 
     protected abstract void CalcSteeringForces();
+
 
     protected Vector3 Seek(Vector3 targetPos)
     {

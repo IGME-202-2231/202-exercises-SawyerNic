@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PhysicsObject : MonoBehaviour
 {
-    Vector3 position;
+    public Vector3 position;
     Vector3 velocity;
     Vector3 direction;
 
@@ -14,7 +14,10 @@ public class PhysicsObject : MonoBehaviour
     [SerializeField]
     float maxSpeed = 1;
     public float MaxSpeed { get { return maxSpeed; } }
-    public Vector3 Velocity { get { return velocity; } }
+    public Vector3 Velocity { 
+        get { return velocity; } 
+        set { velocity = value; } 
+    }
 
     [SerializeField]
     float Mass =1;
@@ -60,6 +63,7 @@ public class PhysicsObject : MonoBehaviour
 
         transform.position = position;
         acceleration = Vector3.zero;
+        Debug.Log(position);
     }
 
     public void ApplyForce(Vector3 force)
