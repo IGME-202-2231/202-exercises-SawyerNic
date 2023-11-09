@@ -22,7 +22,7 @@ public class PhysicsObject : MonoBehaviour
     [SerializeField]
     float Mass =1;
 
-    private Vector2 ScreenMax
+    public Vector2 ScreenMax
     {
         get { 
             return new Vector2(
@@ -32,7 +32,7 @@ public class PhysicsObject : MonoBehaviour
         }
     }
 
-    private Vector2 ScreenMin
+    public Vector2 ScreenMin
     {
         get
         {
@@ -54,8 +54,8 @@ public class PhysicsObject : MonoBehaviour
     void Update()
     {
         // ApplyGravity(Vector3.down * 9.81f);
-        BounceOffEdges();
-        velocity += acceleration * Time.deltaTime;
+/*        BounceOffEdges();
+*/        velocity += acceleration * Time.deltaTime;
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
 
         position += velocity * Time.deltaTime;
@@ -63,7 +63,6 @@ public class PhysicsObject : MonoBehaviour
 
         transform.position = position;
         acceleration = Vector3.zero;
-        Debug.Log(position);
     }
 
     public void ApplyForce(Vector3 force)

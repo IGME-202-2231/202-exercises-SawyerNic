@@ -8,7 +8,7 @@ public abstract class Agent : MonoBehaviour
     public PhysicsObject myPhysicsObject;
 
     [SerializeField]
-    float maxForce = 10;
+    float maxForce;
 
     [SerializeField]
     protected float radius;
@@ -18,9 +18,12 @@ public abstract class Agent : MonoBehaviour
     float wanderAngle;
     float perlinOffset;
 
+    protected Vector3 totalForce;
+
     // Start is called before the first frame update
     void Start()
     {
+        maxForce = 10;
         wanderAngle = Random.Range(0.0f, Mathf.PI * 2);
         perlinOffset = Random.Range(0, 10000);
     }
@@ -28,8 +31,12 @@ public abstract class Agent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        totalForce = Vector3.zero;
+
         CalcSteeringForces();
 
+        totalForce = Vector3.ClampMagnitude(totalForce, maxForce);
+        myPhysicsObject.ApplyForce(totalForce);
     }
 
     protected abstract void CalcSteeringForces();
@@ -40,10 +47,7 @@ public abstract class Agent : MonoBehaviour
         Vector3 desiredVelocity = targetPos - transform.position;
         desiredVelocity = desiredVelocity.normalized * myPhysicsObject.MaxSpeed;
 
-        Vector3 steeringForce = desiredVelocity - myPhysicsObject.Velocity;
-        steeringForce = Vector3.ClampMagnitude(steeringForce, maxForce);
-
-        return steeringForce;
+        return desiredVelocity - myPhysicsObject.Velocity;
     }
 
     protected Vector3 Seek(GameObject target)
@@ -56,10 +60,8 @@ public abstract class Agent : MonoBehaviour
         Vector3 desiredVelocity = transform.position - targetPos;
         desiredVelocity = desiredVelocity.normalized * myPhysicsObject.MaxSpeed;
 
-        Vector3 steeringForce = desiredVelocity - myPhysicsObject.Velocity;
-        steeringForce = Vector3.ClampMagnitude(steeringForce, maxForce);
 
-        return steeringForce;
+        return desiredVelocity - myPhysicsObject.Velocity;
     }
 
     protected Vector3 Flee(GameObject target)
@@ -96,5 +98,22 @@ public abstract class Agent : MonoBehaviour
         wanderTarget = futurePos + pointOnCircle;
 
         return Seek(futurePos + pointOnCircle);
+    }
+
+    protected Vector3 StayInBoundsForce()
+    {
+        if(
+            transform.position.x < myPhysicsObject.ScreenMin.x ||
+            transform.position.x > myPhysicsObject.ScreenMax.x ||
+            transform.position.y < myPhysicsObject.ScreenMin.y ||
+            transform.position.y > myPhysicsObject.ScreenMax.y)
+        {
+            Vector3 camPosition = Camera.main.transform.position;
+            camPosition.z = transform.position.z;
+            return Seek(camPosition);
+        }
+
+        return Vector3.zero;
+        
     }
 }

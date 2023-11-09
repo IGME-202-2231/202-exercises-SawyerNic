@@ -8,10 +8,17 @@ public class Wander : Agent
     float wanderTime = .1f;
     [SerializeField]
     float wanderRadius = 1f;
+    [SerializeField]
+    float boundingForce = 50f;
+
+    
+    
 
     protected override void CalcSteeringForces()
     {
-        myPhysicsObject.ApplyForce(Wander(wanderTime, wanderRadius));
+        totalForce += Wander(wanderTime, wanderRadius);
+        totalForce += StayInBoundsForce() * boundingForce;
+
     }
     private void OnDrawGizmos()
     {
@@ -20,4 +27,6 @@ public class Wander : Agent
 
         Gizmos.DrawLine(transform.position, wanderTarget);
     }
+
+
 }

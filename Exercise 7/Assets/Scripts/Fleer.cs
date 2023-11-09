@@ -17,6 +17,7 @@ public class Fleer : Agent
         DetectCollision();
         seekForce = Flee(target);
         myPhysicsObject.ApplyForce(Flee(target));
+        totalForce += seekForce;
     }
 
     private void OnDrawGizmosSelected()
