@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wander : Agent
+public class Wanderer : Agent
 {
     [SerializeField]
     float wanderTime = .1f;
@@ -18,6 +18,7 @@ public class Wander : Agent
     {
         totalForce += Wander(wanderTime, wanderRadius);
         totalForce += StayInBoundsForce() * boundingForce;
+        totalForce += Separate();
 
     }
     private void OnDrawGizmos()
