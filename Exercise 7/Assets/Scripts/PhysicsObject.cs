@@ -55,7 +55,7 @@ public class PhysicsObject : MonoBehaviour
     {
         // ApplyGravity(Vector3.down * 9.81f);
 /*        BounceOffEdges();
-*/        velocity += acceleration * Time.deltaTime;
+*/      velocity += acceleration * Time.deltaTime;
         velocity = Vector3.ClampMagnitude(velocity, maxSpeed);
 
         position += velocity * Time.deltaTime;

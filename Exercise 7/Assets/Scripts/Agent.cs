@@ -131,7 +131,7 @@ public abstract class Agent : MonoBehaviour
             if (a == this) { continue; }
             float distance = Vector3.Distance(transform.position, a.transform.position);
 
-            SeparateForce += Flee(a.transform.position) * (1f / distance + .0000000001f);
+            SeparateForce += Flee(a.transform.position) * (1f / (distance + .0000000001f));
         }
         return SeparateForce;
     }
