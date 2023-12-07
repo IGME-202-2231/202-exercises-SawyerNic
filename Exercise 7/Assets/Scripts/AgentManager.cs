@@ -9,6 +9,8 @@ public class AgentManager : MonoBehaviour
 
     private List<Agent> agents;
 
+    [SerializeField]
+
     public List<Agent> Agents { get { return agents; } }
 
     [SerializeField]
@@ -16,11 +18,11 @@ public class AgentManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        agents = new List<Agent>();
+        /*agents = new List<Agent>();
         for(uint i = 0; i < wandererCount; i++)
         {
             SpawnWanderer();
-        }
+        }*/
         
     }
 

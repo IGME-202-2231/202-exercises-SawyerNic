@@ -7,6 +7,7 @@ public class PhysicsObject : MonoBehaviour
     public Vector3 position;
     Vector3 velocity;
     Vector3 direction;
+    float radius = .1f;
 
     [SerializeField]
     Vector3 acceleration;
@@ -18,6 +19,9 @@ public class PhysicsObject : MonoBehaviour
         get { return velocity; } 
         set { velocity = value; } 
     }
+
+    public float Radius { get { return radius; } }
+
 
     [SerializeField]
     float Mass =1;

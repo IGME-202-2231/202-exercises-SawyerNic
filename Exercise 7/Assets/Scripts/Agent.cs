@@ -17,6 +17,8 @@ public abstract class Agent : MonoBehaviour
 
     float wanderAngle;
     float perlinOffset;
+    float avoidTime = 1;
+    public float AvoidTime { get { return avoidTime; } }
 
     protected Vector3 totalForce;
 
@@ -76,7 +78,7 @@ public abstract class Agent : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, radius);
+        
 
     }
 
@@ -135,4 +137,6 @@ public abstract class Agent : MonoBehaviour
         }
         return SeparateForce;
     }
+
+
 }
