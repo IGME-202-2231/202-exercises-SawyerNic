@@ -43,4 +43,9 @@ public class SceneManager : MonoBehaviour
         /*Gizmos.color = Color.magenta;
         Gizmos.DrawLine(Vector2.zero,mousePos);*/
     }
+
+    public Vector3 GetObjectDist(Vector3 objOnePos, Vector3 objTwoPos)
+    {
+        return objOnePos - objTwoPos;
+    }
 }

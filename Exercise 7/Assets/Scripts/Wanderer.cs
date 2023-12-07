@@ -33,10 +33,11 @@ public class Wanderer : Agent
         // Green Box for the obstacle avoidance
         Vector3 directionVector = wanderTarget - transform.position;                     // Returns the direction of the agent in vector form
         float dist = directionVector.magnitude;
-        Vector3 boxSize = new Vector3(myPhysicsObject.Radius*4, dist, myPhysicsObject.Radius);
+        Vector3 boxSize = new Vector3(myPhysicsObject.Radius*4, dist, myPhysicsObject.Radius/2);
         Vector3 boxCenter = Vector3.zero;
         boxCenter.y += dist / 2f;
         float angle = Mathf.Atan2(directionVector.y, directionVector.x) * Mathf.Rad2Deg;    // angle is the angle of the direction vector as it relates to the agent 0 degrees is on top
+        
 
         Gizmos.color = Color.blue;
         //directionVector = directionVector.normalized;
@@ -61,15 +62,14 @@ public class Wanderer : Agent
            if(
                 InFront(directionVector, avoidDist) &&
                 Close(avoidDist, dist) &&
-                Vector3.AngleBetween(directionVector, avoidDist) < .2
+                Vector3.AngleBetween(directionVector, avoidDist) < .3
            )
            {
+                wanderTarget = wanderTarget - avoidDist*30;
                 Gizmos.DrawLine(transform.position, pos.Position);
                 Vector3 lineVector = pos.Position - transform.position;
             }
         }
-
-
     }
 
 

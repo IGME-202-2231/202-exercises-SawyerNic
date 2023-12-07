@@ -6,7 +6,7 @@ public class AgentManager : MonoBehaviour
 {
     [SerializeField]
     private Wanderer wanderPrefab;
-
+    
     private List<Agent> agents;
 
     [SerializeField]
@@ -38,4 +38,6 @@ public class AgentManager : MonoBehaviour
         newAgent.AgentManager = this;
         agents.Add(newAgent);
     }
+
+    
 }

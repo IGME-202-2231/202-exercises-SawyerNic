@@ -138,5 +138,10 @@ public abstract class Agent : MonoBehaviour
         return SeparateForce;
     }
 
+    /*protected Vector3 Avoid(float angle)
+    {
+        Vector3 AvoidForce = Vector3.zero;
 
+        
+    }*/
 }
